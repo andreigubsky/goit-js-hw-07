@@ -35,6 +35,7 @@ function createGallery(imageSet){
         imageEntity.src = image.url;
         imageEntity.alt = image.alt;
         imageEntity.style.width = '400px';
+        imageEntity.style.borderRadius = '10px';
         imageItem.appendChild(imageEntity);
         gallary.appendChild(imageItem);
     })
