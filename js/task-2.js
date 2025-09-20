@@ -28,7 +28,7 @@ const images = [
 
 function createGallery(imageSet){
     const gallary = document.querySelector('ul.gallery');
-
+    const arr =[];
     imageSet.map((image)=>{
         const imageItem = document.createElement('li');
         const imageEntity = document.createElement('img');
@@ -37,8 +37,12 @@ function createGallery(imageSet){
         imageEntity.style.width = '400px';
         imageEntity.style.borderRadius = '10px';
         imageItem.appendChild(imageEntity);
-        gallary.appendChild(imageItem);
+
+        console.log(imageItem)
+        arr.push(imageItem.join());
     })
+    console.log(arr);
+    gallary.insertAdjacentHTML(arr);
 }
 
 createGallery(images);
