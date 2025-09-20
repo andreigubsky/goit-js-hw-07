@@ -1,48 +1,35 @@
 const images = [
-    {
-      url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
-      alt: "White and Black Long Fur Cat",
-    },
-    {
-      url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
-      alt: "Orange and White Koi Fish Near Yellow Koi Fish",
-    },
-    {
-      url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
-      alt: "Group of Horses Running",
-    },
-    {
-      url: "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg",
-      alt: "Alpine Spring Meadows",
-    },
-    {
-      url: "https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg",
-      alt: "Nature Landscape",
-    },
-    {
-      url: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
-      alt: "Lighthouse Coast Sea",
-    },
-  ];
+  {
+    url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
+    alt: "White and Black Long Fur Cat",
+  },
+  {
+    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
+    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+  },
+  {
+    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
+    alt: "Group of Horses Running",
+  },
+  {
+    url: "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg",
+    alt: "Alpine Spring Meadows",
+  },
+  {
+    url: "https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg",
+    alt: "Nature Landscape",
+  },
+  {
+    url: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
+    alt: "Lighthouse Coast Sea",
+  },
+];
 
+const gallary = document.querySelector("ul.gallery");
 
-function createGallery(imageSet){
-    const gallary = document.querySelector('ul.gallery');
-    const arr =[];
-    imageSet.map((image)=>{
-        const imageItem = document.createElement('li');
-        const imageEntity = document.createElement('img');
-        imageEntity.src = image.url;
-        imageEntity.alt = image.alt;
-        imageEntity.style.width = '400px';
-        imageEntity.style.borderRadius = '10px';
-        imageItem.appendChild(imageEntity);
+const markup = images
+  .map((image) => `<li><img src="${image.url}" alt="${image.alt}" style="width: 250px; border-radius: 20px;" /></li>`)
+  .join("");
 
-        console.log(imageItem)
-        arr.push(imageItem.join());
-    })
-    console.log(arr);
-    gallary.insertAdjacentHTML(arr);
-}
-
-createGallery(images);
+gallary.innerHTML+=markup;
+console.log(gallary + "<br />" + markup)
