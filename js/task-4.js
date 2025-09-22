@@ -8,7 +8,8 @@ function validateForm() {
     if (email === '' || password === '') {
       return alert('All form fields must be filled in');
     }
-    console.log(`Login: ${form.email.value}, Password: ${form.password.value}`);
+    const obj = { email: form.email.value, password: form.password.value }
+    console.log("{" + obj.email + ", " + obj.password + "}");
     form.reset();
   });
 }
