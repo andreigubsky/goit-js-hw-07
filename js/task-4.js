@@ -9,7 +9,7 @@ function validateForm() {
       return alert('All form fields must be filled in');
     }
     const obj = { email: form.email.value, password: form.password.value }
-    console.log("{" + obj.email + ", " + obj.password + "}");
+    console.log(obj);
     form.reset();
   });
 }
